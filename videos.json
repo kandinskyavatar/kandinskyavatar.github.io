@@ -1,0 +1,466 @@
+{
+  "sections": [
+    {
+      "id": "alignment",
+      "title": "Accurate, natural Lips–Audio Alignment",
+      "blurb": "Speech features from the Qwen2.5-Omni audio tower are injected directly into the DiT, and an area-normalized face loss keeps the lip-sync signal strong even when the visible face is small.",
+      "videos": [
+        {
+          "src": "examples/alingment/200.mp4",
+          "poster": "previews/alingment/200.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 24.6
+        },
+        {
+          "src": "examples/alingment/401.mp4",
+          "poster": "previews/alingment/401.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 13.3
+        },
+        {
+          "src": "examples/alingment/402.mp4",
+          "poster": "previews/alingment/402.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 13.3
+        },
+        {
+          "src": "examples/alingment/403.mp4",
+          "poster": "previews/alingment/403.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 13.3
+        },
+        {
+          "src": "examples/alingment/405.mp4",
+          "poster": "previews/alingment/405.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 16.5
+        },
+        {
+          "src": "examples/alingment/407.mp4",
+          "poster": "previews/alingment/407.jpg",
+          "width": 1216,
+          "height": 768,
+          "duration": 38.7
+        },
+        {
+          "src": "examples/alingment/408.mp4",
+          "poster": "previews/alingment/408.jpg",
+          "width": 1216,
+          "height": 768,
+          "duration": 5.7
+        },
+        {
+          "src": "examples/alingment/409.mp4",
+          "poster": "previews/alingment/409.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 38.7
+        },
+        {
+          "src": "examples/alingment/411.mp4",
+          "poster": "previews/alingment/411.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 9.8
+        },
+        {
+          "src": "examples/alingment/109__TEST_10s_s2v.mp4",
+          "poster": "previews/alingment/109__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 14.3
+        },
+        {
+          "src": "examples/alingment/sbs_3.mp4",
+          "poster": "previews/alingment/sbs_3.jpg",
+          "width": 1280,
+          "height": 768,
+          "duration": 21.8
+        }
+      ]
+    },
+    {
+      "id": "multilanguage",
+      "title": "Multi-language",
+      "blurb": "Trained on a multilingual single-speaker corpus with English and Russian captions, the model keeps lip motion consistent with the driving speech across languages.",
+      "videos": [
+        {
+          "src": "examples/multilanguage/205.mp4",
+          "poster": "previews/multilanguage/205.jpg",
+          "width": 1152,
+          "height": 768,
+          "duration": 7.9
+        },
+        {
+          "src": "examples/multilanguage/304.mp4",
+          "poster": "previews/multilanguage/304.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 14.0
+        },
+        {
+          "src": "examples/multilanguage/306.mp4",
+          "poster": "previews/multilanguage/306.jpg",
+          "width": 1216,
+          "height": 768,
+          "duration": 19.5
+        },
+        {
+          "src": "examples/multilanguage/307.mp4",
+          "poster": "previews/multilanguage/307.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 4.7
+        },
+        {
+          "src": "examples/multilanguage/312.mp4",
+          "poster": "previews/multilanguage/312.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 9.4
+        },
+        {
+          "src": "examples/multilanguage/316.mp4",
+          "poster": "previews/multilanguage/316.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 12.6
+        },
+        {
+          "src": "examples/multilanguage/317.mp4",
+          "poster": "previews/multilanguage/317.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 14.4
+        },
+        {
+          "src": "examples/multilanguage/319.mp4",
+          "poster": "previews/multilanguage/319.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 13.6
+        },
+        {
+          "src": "examples/multilanguage/324.mp4",
+          "poster": "previews/multilanguage/324.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 14.9
+        }
+      ]
+    },
+    {
+      "id": "sng",
+      "title": "The best for Russian and other widely used languages across Eastern Europe, the Caucasus, and Central Asia",
+      "blurb": "25.8% of the training corpus is Russian speech, so Russian-language control works without a separate fine-tuning stage — together with the other languages widely spoken across Eastern Europe, the Caucasus, and Central Asia.",
+      "videos": [
+        {
+          "src": "examples/sng/49.mp4",
+          "poster": "previews/sng/49.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 28.6
+        },
+        {
+          "src": "examples/sng/71.mp4",
+          "poster": "previews/sng/71.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 10.0
+        },
+        {
+          "src": "examples/sng/82.mp4",
+          "poster": "previews/sng/82.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 12.0
+        },
+        {
+          "src": "examples/sng/308.mp4",
+          "poster": "previews/sng/308.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 7.4
+        },
+        {
+          "src": "examples/sng/309.mp4",
+          "poster": "previews/sng/309.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 7.8
+        },
+        {
+          "src": "examples/sng/311.mp4",
+          "poster": "previews/sng/311.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 15.7
+        },
+        {
+          "src": "examples/sng/321.mp4",
+          "poster": "previews/sng/321.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 9.1
+        },
+        {
+          "src": "examples/sng/322.mp4",
+          "poster": "previews/sng/322.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 14.0
+        },
+        {
+          "src": "examples/sng/326.mp4",
+          "poster": "previews/sng/326.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 12.8
+        },
+        {
+          "src": "examples/sng/108__TEST_10s_s2v.mp4",
+          "poster": "previews/sng/108__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 4.7
+        },
+        {
+          "src": "examples/sng/110__TEST_10s_s2v.mp4",
+          "poster": "previews/sng/110__TEST_10s_s2v.jpg",
+          "width": 1280,
+          "height": 768,
+          "duration": 14.8
+        },
+        {
+          "src": "examples/sng/113__TEST_10s_s2v.mp4",
+          "poster": "previews/sng/113__TEST_10s_s2v.jpg",
+          "width": 1280,
+          "height": 768,
+          "duration": 20.0
+        },
+        {
+          "src": "examples/sng/116__TEST_10s_s2v.mp4",
+          "poster": "previews/sng/116__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 15.5
+        },
+        {
+          "src": "examples/sng/120__TEST_10s_s2v.mp4",
+          "poster": "previews/sng/120__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 13.5
+        },
+        {
+          "src": "examples/sng/121__TEST_10s_s2v.mp4",
+          "poster": "previews/sng/121__TEST_10s_s2v.jpg",
+          "width": 1280,
+          "height": 768,
+          "duration": 15.7
+        },
+        {
+          "src": "examples/sng/131__TEST_10s_s2v.mp4",
+          "poster": "previews/sng/131__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 10.8
+        },
+        {
+          "src": "examples/sng/137__TEST_10s_s2v.mp4",
+          "poster": "previews/sng/137__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 12.4
+        },
+        {
+          "src": "examples/sng/141__TEST_10s_s2v.mp4",
+          "poster": "previews/sng/141__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 3.2
+        }
+      ]
+    },
+    {
+      "id": "generalization",
+      "title": "Generalization to cartoon characters and animals",
+      "blurb": "Kandinsky Avatar starts from the Kandinsky 5.0 Video foundation models, and the same conditioning drives speakers that are not photographed humans.",
+      "videos": [
+        {
+          "src": "examples/generalizations/50.mp4",
+          "poster": "previews/generalizations/50.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 20.7
+        },
+        {
+          "src": "examples/generalizations/54.mp4",
+          "poster": "previews/generalizations/54.jpg",
+          "width": 1216,
+          "height": 768,
+          "duration": 11.8
+        },
+        {
+          "src": "examples/generalizations/204.mp4",
+          "poster": "previews/generalizations/204.jpg",
+          "width": 1152,
+          "height": 768,
+          "duration": 20.1
+        },
+        {
+          "src": "examples/generalizations/213.mp4",
+          "poster": "previews/generalizations/213.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 7.7
+        },
+        {
+          "src": "examples/generalizations/215.mp4",
+          "poster": "previews/generalizations/215.jpg",
+          "width": 1280,
+          "height": 768,
+          "duration": 7.8
+        },
+        {
+          "src": "examples/generalizations/412.mp4",
+          "poster": "previews/generalizations/412.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 20.1
+        },
+        {
+          "src": "examples/generalizations/139__TEST_10s_s2v.mp4",
+          "poster": "previews/generalizations/139__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 12.3
+        },
+        {
+          "src": "examples/generalizations/501__TEST_10s_s2v.mp4",
+          "poster": "previews/generalizations/501__TEST_10s_s2v.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 8.0
+        },
+        {
+          "src": "examples/generalizations/502__TEST_10s_s2v.mp4",
+          "poster": "previews/generalizations/502__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 8.0
+        },
+        {
+          "src": "examples/generalizations/503__TEST_10s_s2v.mp4",
+          "poster": "previews/generalizations/503__TEST_10s_s2v.jpg",
+          "width": 1280,
+          "height": 768,
+          "duration": 8.0
+        },
+        {
+          "src": "examples/generalizations/504__TEST_10s_s2v.mp4",
+          "poster": "previews/generalizations/504__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 8.0
+        },
+        {
+          "src": "examples/generalizations/505__TEST_10s_s2v.mp4",
+          "poster": "previews/generalizations/505__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 8.0
+        },
+        {
+          "src": "examples/generalizations/508__TEST_10s_s2v.mp4",
+          "poster": "previews/generalizations/508__TEST_10s_s2v.jpg",
+          "width": 1280,
+          "height": 768,
+          "duration": 8.0
+        },
+        {
+          "src": "examples/generalizations/509__TEST_10s_s2v.mp4",
+          "poster": "previews/generalizations/509__TEST_10s_s2v.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 8.0
+        },
+        {
+          "src": "examples/generalizations/510__TEST_10s_s2v.mp4",
+          "poster": "previews/generalizations/510__TEST_10s_s2v.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 8.0
+        },
+        {
+          "src": "examples/generalizations/511__TEST_10s_s2v.mp4",
+          "poster": "previews/generalizations/511__TEST_10s_s2v.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 8.0
+        }
+      ]
+    },
+    {
+      "id": "long",
+      "title": "Long-Duration Video Generation",
+      "blurb": "Long videos are composed from 5-second chunks at 25 fps with an explicit three-scale FramePack visual memory and mixed reference-memory placement, which limits pose copying and autoregressive looping.",
+      "videos": [
+        {
+          "src": "examples/long/407.mp4",
+          "poster": "previews/long/407.jpg",
+          "width": 1216,
+          "height": 768,
+          "duration": 38.7
+        },
+        {
+          "src": "examples/long/409.mp4",
+          "poster": "previews/long/409.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 38.7
+        },
+        {
+          "src": "examples/long/10v1__TEST_10s_s2v.mp4",
+          "poster": "previews/long/10v1__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 59.8
+        },
+        {
+          "src": "examples/long/12__TEST_10s_s2v.mp4",
+          "poster": "previews/long/12__TEST_10s_s2v.jpg",
+          "width": 768,
+          "height": 1152,
+          "duration": 77.2
+        },
+        {
+          "src": "examples/long/2__TEST_10s_s2v.mp4",
+          "poster": "previews/long/2__TEST_10s_s2v.jpg",
+          "width": 1280,
+          "height": 768,
+          "duration": 37.9
+        },
+        {
+          "src": "examples/long/3v1__TEST_10s_s2v.mp4",
+          "poster": "previews/long/3v1__TEST_10s_s2v.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 38.2
+        },
+        {
+          "src": "examples/long/6__TEST_10s_s2v.mp4",
+          "poster": "previews/long/6__TEST_10s_s2v.jpg",
+          "width": 720,
+          "height": 1280,
+          "duration": 50.4
+        }
+      ]
+    }
+  ]
+}

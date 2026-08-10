@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kandinsky Avatar: Audio-Driven Avatar Video Generation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="org">Kandinsky Lab</div>
+    <h1>Kandinsky Avatar</h1>
+    <p class="tagline">
+      Audio-driven avatar video generation from a single reference image, a speech
+      track, and an English or Russian prompt.
+    </p>
+
+    <div class="links">
+      <a class="btn" href="#" aria-disabled="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm0 2.5L17.5 8H14V4.5zM8 12h8v2H8v-2zm0 4h8v2H8v-2zm0-8h4v2H8V8z"/>
+        </svg>
+        Paper
+      </a>
+      <a class="btn" href="#" aria-disabled="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+          <path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.96 3.22 9.17 7.69 10.66.56.1.77-.24.77-.54v-1.9c-3.13.68-3.79-1.51-3.79-1.51-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.28.94.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.58 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16a10.7 10.7 0 0 1 5.65 0c2.15-1.46 3.09-1.16 3.09-1.16.62 1.55.23 2.7.12 2.98.72.79 1.15 1.8 1.15 3.03 0 4.34-2.63 5.3-5.14 5.57.4.35.76 1.03.76 2.08v3.09c0 .3.2.65.78.54a11.26 11.26 0 0 0 7.68-10.66C23.25 5.48 18.27.5 12 .5z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+
+    <section class="summary">
+      <p>
+        <strong>Kandinsky Avatar</strong> is an open family of speech-to-video models for
+        controllable audio-driven human animation. From a single reference image, a speech
+        waveform, and a text prompt it generates long-form 25 FPS video in which lip
+        motion, expression, pose, and gesture follow the speech, while the prompt
+        independently controls scene, camera, and action. Quality follows from three
+        connected design decisions: an architecture that draws text and acoustic
+        conditioning from one Qwen2.5-Omni checkpoint and adds a reference-aware
+        three-scale visual memory; a training recipe that starts from the Kandinsky 5.0
+        Video foundation models and combines mixed reference-memory layouts, an
+        area-normalized face loss, and block-sparse high-definition attention; and a
+        corpus of 1.17M single-speaker clips selected by active-speaker detection and
+        captioned natively in English and Russian. The resulting 2B and 21B models achieve
+        the strongest lip synchronization among open-source speech-to-video systems and
+        rank first in aggregate quality on EMTD, CelebV-HQ, and HDTF, and human raters
+        prefer them over open-source and commercial competitors in synchronization,
+        motion naturalness, and hand generation.
+      </p>
+    </section>
+
+    <nav class="toc" id="toc"></nav>
+  </div>
+</header>
+
+<main class="wrap" id="sections"></main>
+
+<section class="wrap section method" id="method">
+  <div class="section-index">Method</div>
+  <h2>Method Overview</h2>
+  <p class="blurb">
+    Kandinsky Avatar is a 3D Diffusion Transformer trained with a flow-matching objective
+    in the latent space of a frozen Hunyuan video VAE, and initialized from the Kandinsky
+    5.0 Video text-to-video and image-to-video checkpoints. Three design choices carry the
+    results above: <strong>(1) a shared Qwen2.5-Omni front end</strong>, whose frozen
+    Thinker and audio tower feed two trainable DiT-internal stacks, replacing the
+    standalone Wav2Vec or Whisper path used by most recent S2V systems;
+    <strong>(2) a reference-aware three-scale FramePack memory with mixed reference
+    placement</strong>, which packs past frames at progressively coarser patch sizes and
+    keeps the identity reference far from the target on the temporal RoPE axis,
+    suppressing pose copying and autoregressive looping in long rollouts; and
+    <strong>(3) an area-normalized face loss</strong>, weighted inversely to the face-area
+    ratio of the clip so lip-sync supervision survives when the speaker occupies a small
+    part of the frame. Audio enters only at periodically spaced decoder blocks &mdash; 13
+    of 32 in the 2B model and 18 of 60 in the 21B Pro model &mdash; aligned per latent
+    frame, and Pro adds NABLA block-sparse attention for high-definition training while
+    the reference latent stays dense.
+  </p>
+
+  <figure class="figure">
+    <img src="assets/architecture.png" alt="Overview of the Kandinsky Avatar architecture" loading="lazy">
+    <figcaption>
+      Text features from the frozen Qwen2.5-Omni Thinker and acoustic features from its
+      frozen audio tower feed two trainable DiT-internal stacks. The reference image is
+      encoded by a frozen Hunyuan 3D VAE and concatenated (C) with the noisy target latent and the
+      multi-scale FramePack memory of past frames. Each DiT block applies self-attention
+      (V2V), cross-attention to text (V2T), an optional cross-attention to audio (V2A),
+      and a feed-forward layer.
+    </figcaption>
+  </figure>
+</section>
+
+<footer class="wrap">
+  <section class="notice">
+    <h3>Responsible Use</h3>
+    <p>
+      Every reference image and speech recording on this page is either public-domain
+      material or an output of our own models. The clips exist for one purpose: to document
+      what the research framework does &mdash; how the expressions, lip motion, and gestures
+      it produces track a given input &mdash; and to let readers judge the technical and
+      academic claims made in the report. If any item here raises a concern for you,
+      <a href="mailto:95909216420198@internet.ru">write to us</a> and we will review it and
+      take it down where that is the right thing to do.
+    </p>
+  </section>
+
+  <p>Kandinsky Lab &middot; Kandinsky Avatar</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
