@@ -268,3 +268,12 @@ footer {
   .hero { background: linear-gradient(180deg, #101014 0%, #1a1016 100%); }
   .toc a { background: #17171d; }
 }
+
+.org a,
+footer > p a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.org a:hover,
+footer > p a:hover { text-decoration: underline; }
