@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kandinsky Avatar: Audio-Driven Avatar Video Generation</title>
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -44,26 +44,50 @@
 
 <main class="wrap" id="sections"></main>
 
+<section class="wrap section abstract" id="abstract">
+  <div class="section-index">Abstract</div>
+  <p class="blurb">
+    We present Kandinsky Avatar, an open family of speech-to-video models for
+    controllable audio-driven human animation. From a single reference image, a speech
+    waveform, and a text prompt it generates long-form 25 FPS video in which lip motion,
+    expression, pose, and gesture follow the speech, while the prompt independently
+    controls scene, camera, and action. Quality follows from three connected design
+    decisions. The architecture draws text and acoustic conditioning from one
+    Qwen2.5-Omni checkpoint and adds a reference-aware three-scale visual memory. The
+    training recipe starts from the Kandinsky 5.0 Video foundation models and combines
+    mixed reference-memory layouts with an area-adaptive face loss. The corpus holds
+    1.17M single-speaker clips selected by active-speaker detection and captioned
+    natively in English and Russian. The released 21B model, Kandinsky Avatar Pro,
+    achieves the strongest lip synchronization among the evaluated open-source
+    speech-to-video systems and ranks first in aggregate quality on EMTD, CelebV-HQ, and
+    HDTF. Human raters prefer it over open-source and commercial competitors in
+    synchronization, motion naturalness, and hand generation. A &pi;-Flow distilled
+    variant of the 21B model generates in 16 unguided steps, 5.4&times; faster end to
+    end, and matches or exceeds the teacher on these benchmarks on every metric except a
+    0.04 to 0.06 gap in Sync-D.
+  </p>
+</section>
+
 <section class="wrap section method" id="method">
   <div class="section-index">Method</div>
   <h2>Method Overview</h2>
   <p class="blurb">
     Kandinsky Avatar is a 3D Diffusion Transformer trained with a flow-matching objective
     in the latent space of a frozen Hunyuan video VAE, and initialized from the Kandinsky
-    5.0 Video text-to-video and image-to-video checkpoints. Three design choices carry the
-    results above: <strong>(1) a shared Qwen2.5-Omni front end</strong>, whose frozen
+    5.0 Video text-to-video checkpoints. Three design choices carry the results above:
+    <strong>(1) a shared Qwen2.5-Omni front end</strong>, whose frozen
     Thinker and audio tower feed two trainable DiT-internal stacks, replacing the
     standalone Wav2Vec or Whisper path used by most recent S2V systems;
     <strong>(2) a reference-aware three-scale FramePack memory with mixed reference
     placement</strong>, which packs past frames at progressively coarser patch sizes and
     keeps the identity reference far from the target on the temporal RoPE axis,
     suppressing pose copying and autoregressive looping in long rollouts; and
-    <strong>(3) an area-normalized face loss</strong>, weighted inversely to the face-area
+    <strong>(3) an area-adaptive face loss</strong>, weighted inversely to the face-area
     ratio of the clip so lip-sync supervision survives when the speaker occupies a small
     part of the frame. Audio enters only at periodically spaced decoder blocks &mdash; 13
     of 32 in the 2B model and 18 of 60 in the 21B Pro model &mdash; aligned per latent
-    frame, and Pro adds NABLA block-sparse attention for high-definition training while
-    the reference latent stays dense.
+    frame. Both models are trained at standard definition with dense attention, and the
+    same checkpoints generate high-definition video without a dedicated training stage.
   </p>
 
   <figure class="figure">

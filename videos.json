@@ -3,7 +3,7 @@
     {
       "id": "alignment",
       "title": "Accurate, natural Lips–Audio Alignment",
-      "blurb": "Speech features from the Qwen2.5-Omni audio tower are injected directly into the DiT, and an area-normalized face loss keeps the lip-sync signal strong even when the visible face is small.",
+      "blurb": "Speech features from the Qwen2.5-Omni audio tower are injected directly into the DiT, and an area-adaptive face loss keeps the lip-sync signal strong even when the visible face is small.",
       "videos": [
         {
           "src": "examples/alingment/200.mp4",

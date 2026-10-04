@@ -25,7 +25,7 @@ SECTIONS = [
         "alingment",
         "Accurate, natural Lips–Audio Alignment",
         "Speech features from the Qwen2.5-Omni audio tower are injected directly into "
-        "the DiT, and an area-normalized face loss keeps the lip-sync signal strong even "
+        "the DiT, and an area-adaptive face loss keeps the lip-sync signal strong even "
         "when the visible face is small.",
     ),
     (

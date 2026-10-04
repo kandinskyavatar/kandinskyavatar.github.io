@@ -189,6 +189,11 @@ h1 {
 
 .method { border-bottom: none; }
 
+.abstract .blurb {
+  max-width: 900px;
+  color: var(--fg);
+}
+
 .method .blurb {
   max-width: 900px;
   color: var(--fg);
