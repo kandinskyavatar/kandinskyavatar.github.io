@@ -5,7 +5,8 @@ Also extracts a first-frame poster per clip into previews/ so the grid shows
 the video content before playback.
 
 To change the page: edit SECTIONS below (titles, blurbs, folder order, or
-which folders appear), add/remove .mp4 files in examples/<folder>/, then rerun:
+which folders appear) or BEFORE (clip order), add/remove .mp4 files in
+examples/<folder>/, then rerun:
 
     python build_manifest.py
 """
@@ -61,6 +62,12 @@ SECTIONS = [
     ),
 ]
 
+# Clips moved right before another clip, overriding the order by file name:
+# folder -> {clip stem: stem of the clip it goes before}.
+BEFORE = {
+    "alingment": {"109__TEST_10s_s2v": "411"},
+}
+
 
 def probe(path: Path):
     out = subprocess.run(
@@ -93,6 +100,16 @@ def natural_key(p: Path):
     return (0, int(p.stem), "") if p.stem.isdigit() else (1, 0, p.stem)
 
 
+def ordered(clips, folder: str):
+    clips = sorted(clips, key=natural_key)
+    for stem, anchor in BEFORE.get(folder, {}).items():
+        by_stem = {c.stem: c for c in clips}
+        if stem in by_stem and anchor in by_stem:
+            clips.remove(by_stem[stem])
+            clips.insert(clips.index(by_stem[anchor]), by_stem[stem])
+    return clips
+
+
 def prune_posters(folder: str, keep: set):
     """Drop posters left over from clips that are no longer in examples/."""
     d = PREVIEWS / folder
@@ -111,7 +128,7 @@ def main():
         if not d.is_dir():
             print(f"skip: {d} not found")
             continue
-        clips = sorted(d.glob("*.mp4"), key=natural_key)
+        clips = ordered(d.glob("*.mp4"), folder)
         prune_posters(folder, {f.stem for f in clips})
         videos = []
         for f in clips:
