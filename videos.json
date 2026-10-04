@@ -20,11 +20,11 @@
           "duration": 13.3
         },
         {
-          "src": "examples/alingment/402.mp4",
-          "poster": "previews/alingment/402.jpg",
+          "src": "examples/alingment/405.mp4",
+          "poster": "previews/alingment/405.jpg",
           "width": 1280,
           "height": 720,
-          "duration": 8.1
+          "duration": 16.5
         },
         {
           "src": "examples/alingment/403.mp4",
@@ -34,11 +34,11 @@
           "duration": 9.3
         },
         {
-          "src": "examples/alingment/405.mp4",
-          "poster": "previews/alingment/405.jpg",
+          "src": "examples/alingment/402.mp4",
+          "poster": "previews/alingment/402.jpg",
           "width": 1280,
           "height": 720,
-          "duration": 16.5
+          "duration": 8.1
         },
         {
           "src": "examples/alingment/407.mp4",

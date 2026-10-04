@@ -63,9 +63,14 @@ SECTIONS = [
 ]
 
 # Clips moved right before another clip, overriding the order by file name:
-# folder -> {clip stem: stem of the clip it goes before}.
+# folder -> {clip stem: stem of the clip it goes before}, applied in order.
 BEFORE = {
-    "alingment": {"109__TEST_10s_s2v": "411"},
+    "alingment": {
+        "109__TEST_10s_s2v": "411",
+        # swap 402 and 405
+        "405": "402",
+        "402": "407",
+    },
 }
 
 
