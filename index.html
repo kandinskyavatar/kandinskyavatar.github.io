@@ -14,7 +14,7 @@
     <h1>Kandinsky Avatar</h1>
     <p class="tagline">
       Audio-driven avatar video generation from a single reference image, a speech
-      track, and an English or Russian prompt.
+      track, and a text prompt.
     </p>
 
     <div class="links">
@@ -37,27 +37,6 @@
         Demo
       </a>
     </div>
-
-    <section class="summary">
-      <p>
-        <strong>Kandinsky Avatar</strong> is an open family of speech-to-video models for
-        controllable audio-driven human animation. From a single reference image, a speech
-        waveform, and a text prompt it generates long-form 25 FPS video in which lip
-        motion, expression, pose, and gesture follow the speech, while the prompt
-        independently controls scene, camera, and action. Quality follows from three
-        connected design decisions: an architecture that draws text and acoustic
-        conditioning from one Qwen2.5-Omni checkpoint and adds a reference-aware
-        three-scale visual memory; a training recipe that starts from the Kandinsky 5.0
-        Video foundation models and combines mixed reference-memory layouts, an
-        area-normalized face loss, and block-sparse high-definition attention; and a
-        corpus of 1.17M single-speaker clips selected by active-speaker detection and
-        captioned natively in English and Russian. The resulting 2B and 21B models achieve
-        the strongest lip synchronization among open-source speech-to-video systems and
-        rank first in aggregate quality on EMTD, CelebV-HQ, and HDTF, and human raters
-        prefer them over open-source and commercial competitors in synchronization,
-        motion naturalness, and hand generation.
-      </p>
-    </section>
 
     <nav class="toc" id="toc"></nav>
   </div>

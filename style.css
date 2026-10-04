@@ -87,17 +87,6 @@ h1 {
   transform: translateY(-1px);
 }
 
-.summary {
-  max-width: 860px;
-  margin: 36px auto 0;
-  text-align: center;
-}
-
-.summary p {
-  margin: 0 0 12px;
-  font-size: 16px;
-}
-
 /* ---------- toc ---------- */
 
 .toc {
