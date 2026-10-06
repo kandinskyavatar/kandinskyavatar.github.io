@@ -259,7 +259,7 @@ footer {
     --card: #17171d;
     --accent: #00bd6b;
   }
-  .hero { background: linear-gradient(180deg, #101014 0%, #0f1a15 100%); }
+  .hero { background: linear-gradient(180deg, #101014 0%, #1a1016 100%); }
   .toc a { background: #17171d; }
 }
 
