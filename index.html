@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kandinsky Avatar: Audio-Driven Avatar Video Generation</title>
+<title>Kandinsky S2V 1.0: Audio-Driven Avatar Video Generation</title>
 <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
@@ -11,7 +11,7 @@
 <header class="hero">
   <div class="wrap">
     <div class="org"><a href="https://kandinskylab.ai">Kandinsky Lab</a></div>
-    <h1>Kandinsky Avatar</h1>
+    <h1>Kandinsky S2V 1.0</h1>
     <p class="tagline">
       Audio-driven avatar video generation from a single reference image, a speech
       track, and a text prompt.
@@ -47,24 +47,25 @@
 <section class="wrap section abstract" id="abstract">
   <div class="section-index">Abstract</div>
   <p class="blurb">
-    We present Kandinsky Avatar, an open family of speech-to-video models for
-    controllable audio-driven human animation. From a single reference image, a speech
-    waveform, and a text prompt it generates long-form 25 FPS video in which lip motion,
-    expression, pose, and gesture follow the speech, while the prompt independently
-    controls scene, camera, and action. Quality follows from three connected design
-    decisions. The architecture draws text and acoustic conditioning from one
-    Qwen2.5-Omni checkpoint and adds a reference-aware three-scale visual memory. The
-    training recipe starts from the Kandinsky 5.0 Video foundation models and combines
-    mixed reference-memory layouts with an area-adaptive face loss. The corpus holds
-    1.17M single-speaker clips selected by active-speaker detection and captioned
-    natively in English and Russian. The released 21B model, Kandinsky Avatar Pro,
-    achieves the strongest lip synchronization among the evaluated open-source
-    speech-to-video systems and ranks first in aggregate quality on EMTD, CelebV-HQ, and
-    HDTF. Human raters prefer it over open-source and commercial competitors in
-    synchronization, motion naturalness, and hand generation. A &pi;-Flow distilled
-    variant of the 21B model generates in 16 unguided steps, 5.4&times; faster end to
-    end, and matches or exceeds the teacher on these benchmarks on every metric except a
-    0.04 to 0.06 gap in Sync-D.
+    We present Kandinsky S2V 1.0, an open family of speech-to-video models for
+    controllable audio-driven human animation, comprising Kandinsky S2V 1.0 Lite (2B
+    parameters) and Kandinsky S2V 1.0 Pro (21B parameters). From a single reference
+    image, a speech waveform, and a text prompt, it generates long-form 25 FPS video in
+    which lip motion, expression, pose, and gesture follow the speech. The architecture
+    draws text and audio conditioning from one Qwen2.5-Omni model and adds a
+    reference-aware three-scale visual memory. Training starts from the Kandinsky 5.0
+    Video foundation models and combines mixed reference-memory layouts with an
+    area-adaptive face loss. The corpus holds 1.17M single-speaker clips selected by
+    active-speaker detection and captioned natively in English and Russian. Across EMTD,
+    CelebV-HQ, and HDTF, Lite and Pro take the top two places by a min-max score
+    aggregated over all five reported metrics. Pro also has the highest Sync-C and lowest
+    Sync-D. In the Russian human evaluation, raters prefer Pro to the compared systems
+    for speech-video synchronization, motion naturalness, and hand generation. A
+    &pi;-Flow distilled variant of the 21B model generates in 16 unguided steps,
+    5.4&times; faster end to end, and matches or exceeds Pro on all reported benchmark
+    metrics other than Sync-D. To accelerate open research and deployment in
+    speech-to-video generation, we release the code, model checkpoints, and diffusers
+    integration under the MIT license.
   </p>
 </section>
 
@@ -72,7 +73,7 @@
   <div class="section-index">Method</div>
   <h2>Method Overview</h2>
   <p class="blurb">
-    Kandinsky Avatar is a 3D Diffusion Transformer trained with a flow-matching objective
+    Kandinsky S2V 1.0 is a 3D Diffusion Transformer trained with a flow-matching objective
     in the latent space of a frozen Hunyuan video VAE, and initialized from the Kandinsky
     5.0 Video text-to-video checkpoints. Three design choices carry the results above:
     <strong>(1) a shared Qwen2.5-Omni front end</strong>, whose frozen
@@ -91,7 +92,7 @@
   </p>
 
   <figure class="figure">
-    <img src="assets/architecture.png?v=2" alt="Overview of the Kandinsky Avatar architecture" loading="lazy">
+    <img src="assets/architecture.png?v=2" alt="Overview of the Kandinsky S2V 1.0 architecture" loading="lazy">
     <figcaption>
       Text features from the frozen Qwen2.5-Omni Thinker and acoustic features from its
       frozen audio tower feed two trainable DiT-internal stacks. The reference image is
@@ -117,7 +118,7 @@
     </p>
   </section>
 
-  <p><a href="https://kandinskylab.ai">Kandinsky Lab</a> &middot; Kandinsky Avatar</p>
+  <p><a href="https://kandinskylab.ai">Kandinsky Lab</a> &middot; Kandinsky S2V 1.0</p>
 </footer>
 
 <script src="app.js"></script>

@@ -49,7 +49,7 @@ SECTIONS = [
         "generalization",
         "generalizations",
         "Generalization to cartoon characters and animals",
-        "Kandinsky Avatar starts from the Kandinsky 5.0 Video foundation models, and the "
+        "Kandinsky S2V 1.0 starts from the Kandinsky 5.0 Video foundation models, and the "
         "same conditioning drives speakers that are not photographed humans.",
     ),
     (
