@@ -1,5 +1,5 @@
 :root {
-  --accent: #d6006e;
+  --accent: #00bd6b; /* Kandinsky S2V 1.0 report accent */
   --bg: #ffffff;
   --fg: #16161a;
   --muted: #5c5c66;
@@ -31,7 +31,7 @@ body {
 .hero {
   border-bottom: 1px solid var(--line);
   padding: 64px 0 40px;
-  background: linear-gradient(180deg, #fff 0%, #fdf4f8 100%);
+  background: linear-gradient(180deg, #fff 0%, #f0fbf6 100%);
   text-align: center;
 }
 
@@ -257,9 +257,9 @@ footer {
     --muted: #a0a0ac;
     --line: #2a2a32;
     --card: #17171d;
-    --accent: #ff4d97;
+    --accent: #00bd6b;
   }
-  .hero { background: linear-gradient(180deg, #101014 0%, #1a1016 100%); }
+  .hero { background: linear-gradient(180deg, #101014 0%, #0f1a15 100%); }
   .toc a { background: #17171d; }
 }
 
