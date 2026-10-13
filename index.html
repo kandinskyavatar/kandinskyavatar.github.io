@@ -47,25 +47,26 @@
 <section class="wrap section abstract" id="abstract">
   <div class="section-index">Abstract</div>
   <p class="blurb">
-    We present Kandinsky S2V 1.0, an open family of speech-to-video models for
-    controllable audio-driven human animation, comprising Kandinsky S2V 1.0 Lite (2B
-    parameters) and Kandinsky S2V 1.0 Pro (21B parameters). From a single reference
-    image, a speech waveform, and a text prompt, it generates long-form 25 FPS video in
-    which lip motion, expression, pose, and gesture follow the speech. The architecture
-    draws text and audio conditioning from one Qwen2.5-Omni model and adds a
-    reference-aware three-scale visual memory. Training starts from the Kandinsky 5.0
-    Video foundation models and combines mixed reference-memory layouts with an
-    area-adaptive face loss. The corpus holds 1.17M single-speaker clips selected by
-    active-speaker detection and captioned natively in English and Russian. Across EMTD,
-    CelebV-HQ, and HDTF, Lite and Pro take the top two places by a min-max score
-    aggregated over all five reported metrics. Pro also has the highest Sync-C and lowest
-    Sync-D. In the Russian human evaluation, raters prefer Pro to the compared systems
-    for speech-video synchronization, motion naturalness, and hand generation. A
-    &pi;-Flow distilled variant of the 21B model generates in 16 unguided steps,
-    5.4&times; faster end to end, and matches or exceeds Pro on all reported benchmark
-    metrics other than Sync-D. To accelerate open research and deployment in
-    speech-to-video generation, we release the code, model checkpoints, and diffusers
-    integration under the MIT license.
+    We present Kandinsky S2V 1.0, an open family of speech-to-video models for con-
+trollable audio-driven human animation, comprising Kandinsky S2V 1.0 Lite (2B parameters)
+and Kandinsky S2V 1.0 Pro (21B parameters). From a single reference image, a speech wave-
+form, and a text prompt, the models generate long-form 25 FPS video in which lip motion,
+expression, pose, and gesture follow the speech. The architecture draws text and audio
+conditioning from one Qwen2.5-Omni model and adds a reference-aware three-scale vi-
+sual memory. Training starts from the Kandinsky 5.0 Video foundation models [1] and com-
+bines mixed reference-memory layouts with an area-adaptive face loss. The training corpus
+contains 1.17M single-speaker clips selected by active-speaker detection, with captions gen-
+erated directly in English and Russian. A side-by-side human evaluation against the strongest
+open-source baseline and two proprietary commercial models shows that Kandinsky S2V 1.0
+Pro performs comparably to or better than these models on average and is also preferred
+for lip synchronization. On common speech to video benchmarks, Pro ranks among the top
+performing models according to mean rank and min-max score over five reported metrics.
+Beyond the base models, we provide π-Flow distilled variants of both Lite and Pro. The dis-
+tilled Kandinsky S2V 1.0 Pro model generates video in 16 sampling steps without classifier-free
+guidance, achieving a 5.4× end-to-end speedup over the base model, while matching or
+exceeding it on nearly all reported benchmark metrics. To accelerate open research and
+deployment in speech-to-video generation, we release the code, model checkpoints, and
+diffusers integration under the MIT license.
   </p>
 </section>
 
