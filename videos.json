@@ -106,7 +106,7 @@
         {
           "src": "examples/multilanguage/306.mp4",
           "poster": "previews/multilanguage/306.jpg",
-          "width": 1216,
+          "width": 1280,
           "height": 768,
           "duration": 19.5
         },
@@ -114,7 +114,7 @@
           "src": "examples/multilanguage/307.mp4",
           "poster": "previews/multilanguage/307.jpg",
           "width": 1280,
-          "height": 720,
+          "height": 768,
           "duration": 4.7
         },
         {
@@ -149,7 +149,7 @@
           "src": "examples/multilanguage/324.mp4",
           "poster": "previews/multilanguage/324.jpg",
           "width": 1280,
-          "height": 720,
+          "height": 768,
           "duration": 14.9
         }
       ]
@@ -298,6 +298,13 @@
           "width": 768,
           "height": 1152,
           "duration": 20.7
+        },
+        {
+          "src": "examples/generalizations/54.mp4",
+          "poster": "previews/generalizations/54.jpg",
+          "width": 1280,
+          "height": 768,
+          "duration": 12.1
         },
         {
           "src": "examples/generalizations/204.mp4",
